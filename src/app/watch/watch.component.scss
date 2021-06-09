@@ -1,0 +1,27 @@
+.container-watch {
+    border-radius: 10px;
+    background-color: rgb(34, 31, 31);
+    box-shadow: inset 0 0 5px black;
+    width: fit-content;
+}
+@import url("http://fonts.cdnfonts.com/css/led-digital-7");
+.watch-numbers {
+    color: rgb(100, 150, 51);
+    font-size: 50px;
+    padding-top: 15px;
+    padding-left: 85px;
+    padding-right: 85px;
+    padding-bottom: 15px;
+    font-family: "LED Digital 7", sans-serif;
+}
+
+.btn-watch {
+    cursor: pointer;
+}
+hr.line {
+    border-top: 1px solid rgb(218, 218, 218);
+}
+.time-font {
+    font-family: "LED Digital 7", sans-serif;
+    font-size: 20px;
+}

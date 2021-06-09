@@ -1,0 +1,49 @@
+<div class="container " style="width: fit-content;">
+
+  <div class="row justify-content-md-center">
+    <div class="col-md-auto">
+      <div class="col justify-content-md-center container-watch" style="border:black;">
+
+        <div class="row justify-content-md-center">
+          <span class="col-md-auto watch-numbers">
+            {{getHour}}:{{getMinute}}:{{getSecond}}
+          </span>
+        </div>
+
+        <div class="col btn-group" style="background-color: transparent; width: 100%;">
+          <button type="button" class="btn btn-light btn-watch" *ngIf="!isRunning" (click)='startTimer()'><img
+              src="assets/play.svg"> Play</button>
+          <button type="button" class="btn btn-light btn-watch" *ngIf="isRunning" (click)='pauseTimer()'><img
+              src="assets/pause.svg"> Stop</button>
+
+          <button type="button" class="btn btn-light" (click)='saveCurrentTime()'>
+            <img src="assets/clock.svg">
+          </button>
+          <button type="button" class="btn btn-light btn-watch" (click)="clearAll()">
+            <img src="assets/trash.svg">
+          </button>
+        </div>
+
+      </div>
+    </div>
+  </div>
+  <div style="overflow-y: auto; overflow-x: hidden; max-height: 300px;">
+    <div *ngFor="let item of currentTimeList">
+      <div class="row justify-content-md-left" (mouseover)="showHideElement(item, true)"
+        (mouseleave)="showHideElement(item, false)">
+        <div>
+          <span class="col-md-auto time-font" style="color: white;">
+            {{item.time}}
+          </span>
+          <button class="btn btn-danger btn-xs" *ngIf="!!item.showButton" (click)="deleteTimeFromList(item)"
+            style="float: right; cursor: pointer;">
+            REMOVE
+          </button>
+          <pre></pre>
+        </div>
+      </div>
+      <hr class="line">
+    </div>
+  </div>
+
+</div>
