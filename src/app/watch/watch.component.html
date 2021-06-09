@@ -11,15 +11,15 @@
         </div>
 
         <div class="col btn-group" style="background-color: transparent; width: 100%;">
-          <button type="button" class="btn btn-light btn-watch" *ngIf="!isRunning" (click)='startTimer()'><img
+          <button type="button" class="btn btn-light btn-watch col-md-8" *ngIf="!isRunning" (click)='startTimer()'><img
               src="assets/play.svg"> Play</button>
-          <button type="button" class="btn btn-light btn-watch" *ngIf="isRunning" (click)='pauseTimer()'><img
+          <button type="button" class="btn btn-light btn-watch col-md-8" *ngIf="isRunning" (click)='pauseTimer()'><img
               src="assets/pause.svg"> Stop</button>
 
-          <button type="button" class="btn btn-light" (click)='saveCurrentTime()'>
+          <button type="button" class="btn btn-light btn-watch col-md-2" (click)='saveCurrentTime()'>
             <img src="assets/clock.svg">
           </button>
-          <button type="button" class="btn btn-light btn-watch" (click)="clearAll()">
+          <button type="button" class="btn btn-light btn-watch col-md-2" (click)="clearAll()">
             <img src="assets/trash.svg">
           </button>
         </div>

@@ -8,14 +8,14 @@ import { TimeItem } from '../models/time-item.model';
 })
 export class WatchService {
   public timeInit: CurrentTime = {
-    mm:'00',
-    ss:'00',
-    ms:'00',
-    elapsedTime:0
+    mm: '00',
+    ss: '00',
+    ms: '00',
+    elapsedTime: 0
   }
   private timeList = new BehaviorSubject<TimeItem[]>([]);
   serviceTimeList$ = this.timeList.asObservable();
-  
+
   private currentTime = new BehaviorSubject<CurrentTime>(this.timeInit);
   serviceCurrentTime$ = this.currentTime.asObservable();
 
@@ -28,13 +28,18 @@ export class WatchService {
     localStorage.setItem('time_list', JSON.stringify(timeList));
   }
 
-  public setCurrentTime(time:CurrentTime) {
+  public setCurrentTime(time: CurrentTime) {
     this.currentTime.next(time)
     localStorage.setItem('current_time', JSON.stringify(time));
   }
 
-  public clearAll(){
-    this.setCurrentTime(this.timeInit)
+  public clearAll() {
+    this.setCurrentTime({
+      mm: '00',
+      ss: '00',
+      ms: '00',
+      elapsedTime: 0
+    })
   }
 
 }
